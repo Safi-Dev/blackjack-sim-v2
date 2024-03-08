@@ -475,10 +475,30 @@ table = Table()
 table.players.append(Player())
 print("Round, Dealer FaceCard, Player Card 1, Card 2, Total, Soft Hand, Is BlackJack, Busted, Action, Result, Value")
 
-for i in range(0, 1000):        # Simulates 1,000 rounds of BlackJack
+results_tally = {
+    "-1.0": 0,
+    "-0.5": 0,
+    "1.0": 0,
+    "1.2": 0,
+    "0.0": 0,
+    "2.0": 0,
+    "-2.0": 0
+}
+
+for i in range(0, 10000):        # Simulates 1,000 rounds of Blackjack
     table.playRound()
     print(str(i) + ", " + table.printShortResults())
-#    print("Round " + str(i) + ": " + table.printVerboseResults())     # More verbose printout of each hand played
-#    print("\n")
+    result = table.printShortResults().split(",")[-1].strip()  # Extracting the result of the round and removing any whitespace
+    # Update the tally based on the result of the current round
+    result = str(result)  # Convert result to a string
+    if result in results_tally:
+        results_tally[result] += 1
+    else:
+        results_tally[result] = 1
 
     table.reset()
+
+# Print out the tally after all rounds
+print("Results Tally:")
+for result, count in results_tally.items():
+    print(f"{result}: {count}")
