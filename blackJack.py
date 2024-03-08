@@ -485,6 +485,16 @@ results_tally = {
     "-2.0": 0
 }
 
+result_descriptions = {
+    "-1.0": "losses",
+    "-0.5": "surrender",
+    "1.0": "wins",
+    "1.2": "special win",
+    "0.0": "draws",
+    "2.0": "special draw",
+    "-2.0": "special loss"
+}
+
 for i in range(0, 10000):        # Simulates 1,000 rounds of Blackjack
     table.playRound()
     print(str(i) + ", " + table.printShortResults())
@@ -501,4 +511,5 @@ for i in range(0, 10000):        # Simulates 1,000 rounds of Blackjack
 # Print out the tally after all rounds
 print("Results Tally:")
 for result, count in results_tally.items():
-    print(f"{result}: {count}")
+    if result in result_descriptions:
+        print(f"{result_descriptions[result]}: {count}")
