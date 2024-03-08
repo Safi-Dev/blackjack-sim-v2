@@ -1,6 +1,7 @@
 # BlackJack Simulator (in Python)
 A BlackJack simulator to play any number of hands using different strategies
-# Added a tally at the end to improve data visualisation
+
+Added a tally at the end to improve data visualisation
 
 ## The Rules
 To keep the code relatively simple, a lot of the rules are hard-coded. This simulator assumes:
