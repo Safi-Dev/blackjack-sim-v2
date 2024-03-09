@@ -1,5 +1,8 @@
 import random
 from enum import Enum, auto
+import time
+
+start_time = time.time()
 
 class PlayOptions(Enum):
     STAY = 1
@@ -489,16 +492,17 @@ result_descriptions = {
     "-1.0": "losses",
     "-0.5": "surrender",
     "1.0": "wins",
-    "1.2": "special win",
+    "1.2": "blackjacks",
     "0.0": "draws",
-    "2.0": "special draw",
-    "-2.0": "special loss"
+    "2.0": "double wins",
+    "-2.0": "double losses"
 }
 
-for i in range(0, 10000):        # Simulates 1,000 rounds of Blackjack
+for i in range(0, 10000):        # Simulates x rounds of Blackjack
     table.playRound()
-    print(str(i) + ", " + table.printShortResults())
+    #print(str(i) + ", " + table.printShortResults()) #Prints out the results of the round INCREASES RUNTIME!!!!
     result = table.printShortResults().split(",")[-1].strip()  # Extracting the result of the round and removing any whitespace
+    
     # Update the tally based on the result of the current round
     result = str(result)  # Convert result to a string
     if result in results_tally:
@@ -509,7 +513,17 @@ for i in range(0, 10000):        # Simulates 1,000 rounds of Blackjack
     table.reset()
 
 # Print out the tally after all rounds
+print(" ")
 print("Results Tally:")
 for result, count in results_tally.items():
     if result in result_descriptions:
         print(f"{result_descriptions[result]}: {count}")
+
+total_score = sum(float(result) * results_tally[result] for result in results_tally)
+print(" ")
+print("Total Score:", int(total_score))
+print(" ")
+#runtime counter for optimisation
+end_time = time.time()
+runtime = end_time - start_time
+print("Program Runtime:", runtime, "seconds")
