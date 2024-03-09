@@ -7,6 +7,7 @@ A BlackJack simulator to play any number of hands using different strategies
 - [x] Add total score counter | 9/3/2024
 - [x] Improve program efficiency/runtime | Improved by 90% | 9/3/2024
 - [ ] Write an AI program which utilises the total score value to find optimal parameters for best blackjack winnings
+- [ ] Edit the AI program in order for it learn card counting 
 
 ## The Rules
 To keep the code relatively simple, a lot of the rules are hard-coded. This simulator assumes:
