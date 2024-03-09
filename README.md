@@ -1,6 +1,13 @@
 # BlackJack Simulator (in Python)
 A BlackJack simulator to play any number of hands using different strategies
 
+## To do
+- [x] Add score tally
+- [x] Add runtime counter
+- [x] Add total score counter
+- [x] Improve program efficiency/runtime | Improved by 90% 
+- [ ] Write an AI program which utilises the total score value to find optimal parameters for best blackjack winnings
+
 ## The Rules
 To keep the code relatively simple, a lot of the rules are hard-coded. This simulator assumes:
 * Dealer hits soft-17
