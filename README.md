@@ -2,10 +2,10 @@
 A BlackJack simulator to play any number of hands using different strategies
 
 ## To do
-- [x] Add score tally
-- [x] Add runtime counter
-- [x] Add total score counter
-- [x] Improve program efficiency/runtime | Improved by 90% 
+- [x] Add score tally | 9/3/2024
+- [x] Add runtime counter | 9/3/2024
+- [x] Add total score counter | 9/3/2024
+- [x] Improve program efficiency/runtime | Improved by 90% | 9/3/2024
 - [ ] Write an AI program which utilises the total score value to find optimal parameters for best blackjack winnings
 
 ## The Rules
