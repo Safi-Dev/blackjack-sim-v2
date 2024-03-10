@@ -91,3 +91,12 @@ The Table class is where the bulk of the action is.
 When the table "playRound()" is called, the table first deals the first 2 cards as no logic is needed prior to dealing the first 2 cards to all players and the dealer. If the dealer doesn't have a BlackJack, it then continues the play.
 
 The playPlayerHand() is probably the most complicated part of the code because in the event of a Split, it can also be called recursively. The code is written so that the playPlayerHand() uses the basicStrategyPlay() method to play the round. You can also change this to randomPlay() to see what would happen if the player plays the game by taking a random action based on available actions.
+
+## Requirements
+
+- Python 3.x
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
